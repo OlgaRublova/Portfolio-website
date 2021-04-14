@@ -16,15 +16,15 @@
         <img src="https://1millionbot.com/wp-content/uploads/2019/07/lola-chatbot-1.png" alt="">
     </a>
     <div id="toggle"></div>
-    <div id="navbar">
-        <ul>
-            <li class=" home active-bg"><a href="#home">Home</a></li>
-            <li class="about"><a href="#about">About</a></li>
-            <li class="skills"><a href="#skills">Skills</a></li>
-            <li class="projects"><a href="#projects">Projects</a></li>
-            <li class="contact"><a href="#contact">Contact</a></li>
+    <nav id="navbar">
+        <ul class="links">
+            <li><a href="#home" class="scroll-link active-bg">Home</a></li>
+            <li><a href="#about" class="scroll-link">About</a></li>
+            <li><a href="#skills" class="scroll-link">Skills</a></li>
+            <li><a href="#projects" class="scroll-link">Projects</a></li>
+            <li><a href="#contact" class="scroll-link">Contact</a></li>
         </ul>
-    </div>
+    </nav>
 </header>
 
 <section id="home">
@@ -48,22 +48,20 @@
         <div class="blocks"></div>
     </div>
 
-    <div class="title">
+    <div class="about-title title">
         <h2 class="titleText">About <span>M</span>e</h2>
-        <p> I'm a self-taught front-end developer based in Los Angeles.
-            I was born and raised in Ukraine, Eastern Europe. In 2018 I won in the Diversity Visa Lottery and moved
-            to the United States.
-            I’m a curious and driven person, a lifelong learner who started coding and discovered a huge
-            passion in front-end development.
+        <p>
+            I'm an adventurous girl who won in the Diversity Visa Lottery and relocated to the United States.
+            I already have a Masters degree in International Economics, but I dream of accomplishing a career change to
+            software development  where I can be more creative and more in control of my job prospects.<br><br>
 
-            <!--                <br><br>-->
-            <!--                I invite you to take a look at my <a href="#projects"><span>Portfolio</span></a>-->
-            <!--                and <a href="https://github.com/OlgaRublova?tab=repositories"><span>Github</span></a> page to see the-->
-            <!--                examples-->
-            <!--                of the many self-initiated projects and tutorials I took.-->
+            I started out teaching myself HTML/CSS, Javascript and React by using online tutorials from Udemy & Pluralsight.
+            Additionally, I'm following  an 'old fashioned' way - working toward double-major in Computer Science & Graphic Design
+            in Los Angeles Pierce College.<br><br>
+
+            I am learning new stuff everyday and work on interesting projects to become the best front-end developer I can!
+
         </p>
-
-
     </div>
 </section>
 
@@ -277,39 +275,12 @@
 
 
 <script>
-    const acc = document.getElementsByClassName("contentBx");
-    for (let i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-        });
-    }
-</script>
-
-<script>
-    const header = document.getElementById('header'),
-        toggle = document.getElementById('toggle'),
-        navbar = document.getElementById('navbar');
-
-    //navigation bar toggling
-    document.onclick = function (e) {
-        if (e.target.id !== 'header' && e.target.id !== 'toggle' && e.target.id !== 'navbar') {
-            toggle.classList.remove('active');
-            navbar.classList.remove('active');
-        }
-    }
-    toggle.onclick = function () {
-        toggle.classList.toggle('active');
-        navbar.classList.toggle('active');
-
-    }
-
-
-</script>
-<script type="text/javascript">
-
 
 </script>
 
-<script src="index.js"></script>
+
+
+
+<script type="module" src="index.js"></script>
 </body>
 </html>

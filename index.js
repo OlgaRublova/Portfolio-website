@@ -1,32 +1,37 @@
-const sections = document.querySelectorAll("section"),
-    navLi = document.querySelectorAll("#navbar ul li");
-
-window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+import scrollSmoothly from './scroll.js';
+import toggleNav from './responsivee-toggle.js';
 
 
-        if (pageYOffset >= sectionTop - sectionHeight/3) {
-            current = section.getAttribute("id");
-            console.log(current);
-        }
-    });
+//for smooth and correct scrolling among the sections
+window.addEventListener('load', scrollSmoothly);
 
-    navLi.forEach((li) => {
-        li.classList.remove("active-bg");
-        if (li.classList.contains(current)) {
-            li.classList.add("active-bg");
-        }
-    });
-});
+//animation
 window.addEventListener('load', animateBackground);
+
+
+window.addEventListener('load', toggleNav);
+
 function animateBackground() {
     let banner = document.getElementsByClassName('banner')[0],
         blocks = document.getElementsByClassName('blocks');
-    for (let i = 1; i < 400; i++) {
+    for (let i = 1; i < 200; i++) {
         banner.innerHTML += "<div class='blocks'></div>";
-        blocks[i].style.animationDelay = `${i * 0.02}s`;
+        blocks[i].style.animationDelay = `${i * 0.01}s`;
     }
 }
+
+
+//color change on nav item click
+
+const scrollLinks = document.querySelectorAll(".scroll-link");
+    for (let i = 0; i < scrollLinks.length; i++) {
+        scrollLinks[i].addEventListener("click", function() {
+            let current = document.getElementsByClassName("active-bg");
+            current[0].className = current[0].className.replace(" active-bg", "");
+            this.className += " active-bg";
+        });
+    }
+
+
+
+export default animateBackground;
