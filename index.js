@@ -13,14 +13,20 @@ window.addEventListener('load', toggleNav);
 
 
 //color change on nav item click
+const links = document.querySelector('.links');
 const scrollLinks = document.querySelectorAll(".scroll-link");
-for (let i = 0; i < scrollLinks.length; i++) {
-    scrollLinks[i].addEventListener("click", function () {
-        let current = document.getElementsByClassName("active-bg");
-        current[0].className = current[0].className.replace(" active-bg", "");
-        this.className += " active-bg";
-    });
-};
+
+
+links.addEventListener('click', e => {
+    const id = e.target.getAttribute('href').slice(1);
+    if(id){
+        scrollLinks.forEach(link => {
+            link.classList.remove('active-bg');
+            e.target.classList.add('active-bg'); //the element you clicked = e.target
+        })
+    }
+})
+
 
 
 
