@@ -11,6 +11,20 @@ window.addEventListener('load', animateBackground);
 
 window.addEventListener('load', toggleNav);
 
+
+//color change on nav item click
+const scrollLinks = document.querySelectorAll(".scroll-link");
+for (let i = 0; i < scrollLinks.length; i++) {
+    scrollLinks[i].addEventListener("click", function () {
+        let current = document.getElementsByClassName("active-bg");
+        current[0].className = current[0].className.replace(" active-bg", "");
+        this.className += " active-bg";
+    });
+};
+
+
+
+
 function animateBackground() {
     let banner = document.getElementsByClassName('banner')[0],
         blocks = document.getElementsByClassName('blocks');
@@ -19,19 +33,6 @@ function animateBackground() {
         blocks[i].style.animationDelay = `${i * 0.01}s`;
     }
 }
-
-
-//color change on nav item click
-
-const scrollLinks = document.querySelectorAll(".scroll-link");
-    for (let i = 0; i < scrollLinks.length; i++) {
-        scrollLinks[i].addEventListener("click", function() {
-            let current = document.getElementsByClassName("active-bg");
-            current[0].className = current[0].className.replace(" active-bg", "");
-            this.className += " active-bg";
-        });
-    }
-
 
 
 export default animateBackground;
